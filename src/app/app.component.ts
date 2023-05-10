@@ -16,34 +16,26 @@ interface AppSection {
   imports: [CommonModule, SectionComponent],
   template: `
     <main class="p-20 max-w-2xl">
-      <header class="mb-12 text-xl font-bold">gavenda<span class="text-gray-500">.dev</span></header>
+      <header class="mb-12 text-xl font-bold">
+        <ng-container *ngFor="let value of hostname; let i = index">
+          <ng-container *ngIf="i % 2 !== 0; else noDots">
+            <ng-container *ngIf="i + 1 !== hostname.length; else singleDot">
+              <span class="text-gray-500">.{{ value }}.</span>
+            </ng-container>
+            <ng-template #singleDot>
+              <span class="text-gray-500">.{{ value }}</span>
+            </ng-template>
+          </ng-container>
+          <ng-template #noDots>{{ value }}</ng-template>
+        </ng-container>
+      </header>
 
+      <!-- Sections -->
       <section appSection id="intro" [items]="section.intro"></section>
-
       <section appSection id="projects" title="Projects" [items]="section.projects"></section>
-
-      <section appSection id="templates" title="Templates" [items]="section.templates">
-        <ul class="list-none p-0">
-          <li>
-            =>
-            <a
-              class="text-sky-200 hover:underline"
-              href="https://github.com/gavenda/discord-bot-kotlin"
-              target="_blank"
-              rel="noopener">
-              discord-bot-kotlin
-            </a>
-          </li>
-        </ul>
-      </section>
-
-      <section appSection id="donate" title="Donate" [items]="section.donate">
-        <p>=> I might accept donations if I make something significant to the community.</p>
-      </section>
-
-      <section appSection id="contact" title="Contact" [items]="section.contact">
-        <p>=> I might accept donations if I make something significant to the community.</p>
-      </section>
+      <section appSection id="templates" title="Templates" [items]="section.templates"></section>
+      <section appSection id="donate" title="Donate" [items]="section.donate"></section>
+      <section appSection id="contact" title="Contact" [items]="section.contact"></section>
 
       <footer class="mt-12 pt-4 pb-4 border-t border-solid text-gray-500 border-gray-800">&copy; 2023 Gavenda.</footer>
     </main>
@@ -101,4 +93,6 @@ export class AppComponent {
       },
     ],
   };
+
+  hostname = location.hostname.split('.');
 }
