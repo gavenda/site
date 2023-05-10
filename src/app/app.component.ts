@@ -1,35 +1,104 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+import { SectionComponent, SectionListItem } from './section/section.component';
+
+interface AppSection {
+  intro: SectionListItem[];
+  projects: SectionListItem[];
+  templates: SectionListItem[];
+  donate: SectionListItem[];
+  contact: SectionListItem[];
+}
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, SectionComponent],
   template: `
-    <!--The content below is only a placeholder and can be replaced.-->
-    <div style="text-align:center" class="content">
-      <h1>
-        Welcome to {{title}}!
-      </h1>
-      <span style="display: block">{{ title }} app is running!</span>
-      <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-    </div>
-    <h2>Here are some links to help you start: </h2>
-    <ul>
-      <li>
-        <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-      </li>
-      <li>
-        <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-      </li>
-      <li>
-        <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-      </li>
-    </ul>
-    
+    <main class="p-20 max-w-2xl">
+      <header class="mb-12 text-xl font-bold">gavenda<span class="text-gray-500">.dev</span></header>
+
+      <section appSection id="intro" [items]="section.intro"></section>
+
+      <section appSection id="projects" title="Projects" [items]="section.projects"></section>
+
+      <section appSection id="templates" title="Templates" [items]="section.templates">
+        <ul class="list-none p-0">
+          <li>
+            =>
+            <a
+              class="text-sky-200 hover:underline"
+              href="https://github.com/gavenda/discord-bot-kotlin"
+              target="_blank"
+              rel="noopener">
+              discord-bot-kotlin
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section appSection id="donate" title="Donate" [items]="section.donate">
+        <p>=> I might accept donations if I make something significant to the community.</p>
+      </section>
+
+      <section appSection id="contact" title="Contact" [items]="section.contact">
+        <p>=> I might accept donations if I make something significant to the community.</p>
+      </section>
+
+      <footer class="mt-12 pt-4 pb-4 border-t border-solid text-gray-500 border-gray-800">&copy; 2023 Gavenda.</footer>
+    </main>
   `,
   styles: [],
 })
 export class AppComponent {
-  title = 'gavenda.dev';
+  section: AppSection = {
+    intro: [
+      {
+        type: 'text',
+        text: 'I write random open-source crapware for free. For my personal use. Not yours.',
+      },
+    ],
+    projects: [
+      {
+        type: 'link',
+        url: 'https://github.com/gavenda/basura',
+        text: 'Basura (AniList Bot)',
+      },
+      {
+        type: 'link',
+        url: 'https://github.com/gavenda/studio-helper/tree/main/bot/vivy',
+        text: 'Vivy (Modern Music Bot)',
+      },
+    ],
+    templates: [
+      {
+        type: 'link',
+        url: 'https://github.com/gavenda/discord-bot-kotlin',
+        text: 'discord-bot-kotlin',
+      },
+    ],
+    donate: [
+      {
+        type: 'text',
+        text: 'I might accept donations if I make something significant to the community.',
+      },
+    ],
+    contact: [
+      {
+        type: 'link',
+        url: 'https://osu.ppy.sh/users/Gavenda',
+        text: 'osu!',
+      },
+      {
+        type: 'link',
+        url: 'https://anilist.co/user/Gavenda',
+        text: 'AniList',
+      },
+      {
+        type: 'link',
+        url: 'https://github.com/gavenda',
+        text: 'GitHub',
+      },
+    ],
+  };
 }
