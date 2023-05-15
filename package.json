@@ -1,14 +1,16 @@
 {
-  "name": "gavenda-dev",
+  "name": "site",
   "version": "1.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "scully": "scully --project gavenda.dev",
-    "generate": "run-s build scully",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "start": "run-s serve:main",
+    "serve:main": "ng serve gavenda.dev",
+    "serve:basura": "ng serve basura.gavenda.dev",
+    "build:main": "ng build gavenda.dev",
+    "build:basura": "ng build basura.gavenda.dev",
+    "scully:main": "scully --project gavenda.dev",
+    "scully:basura": "scully --project basura.gavenda.dev",
+    "generate:main": "run-s build:main scully:main",
+    "generate:basura": "run-s build:basura scully:basura"
   },
   "private": true,
   "dependencies": {
@@ -27,17 +29,10 @@
     "zone.js": "~0.13.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^16.0.0",
-    "@angular/cli": "~16.0.0",
+    "@angular-devkit/build-angular": "^16.0.1",
+    "@angular/cli": "~16.0.1",
     "@angular/compiler-cli": "^16.0.0",
-    "@types/jasmine": "~4.3.0",
     "autoprefixer": "^10.4.14",
-    "jasmine-core": "~4.6.0",
-    "karma": "~6.4.0",
-    "karma-chrome-launcher": "~3.2.0",
-    "karma-coverage": "~2.2.0",
-    "karma-jasmine": "~5.1.0",
-    "karma-jasmine-html-reporter": "~2.0.0",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.23",
     "tailwindcss": "^3.3.2",

@@ -1,10 +1,10 @@
 import { ScullyConfig } from '@scullyio/scully';
 
 export const config: ScullyConfig = {
-  projectRoot: './sites/gavenda.dev/src',
-  projectName: 'gavenda.dev',
-  distFolder: './dist/gavenda.dev',
-  outDir: './dist/static/gavenda.dev',
+  projectRoot: './sites/basura.gavenda.dev/src',
+  projectName: 'basura.gavenda.dev',
+  distFolder: './dist/basura.gavenda.dev',
+  outDir: './dist/static/basura.gavenda.dev',
   defaultPostRenderers: [],
   routes: {},
   puppeteerLaunchOptions: {
