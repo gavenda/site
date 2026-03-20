@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { SectionComponent, SectionListItem } from './section/section.component';
 
@@ -14,23 +14,23 @@ interface AppSection {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, SectionComponent],
+  imports: [SectionComponent],
   template: `
     <main class="p-20 max-w-2xl">
       <header class="mb-12 text-xl font-bold">
-        <ng-container *ngFor="let value of hostname; let i = index">
-          <ng-container *ngIf="i % 2 !== 0; else noDots">
-            <ng-container *ngIf="i + 1 !== hostname.length; else singleDot">
+        @for (value of hostname; track value; let i = $index) {
+          @if (i % 2 !== 0) {
+            @if (i + 1 !== hostname.length) {
               <span class="text-gray-500">.{{ value }}.</span>
-            </ng-container>
-            <ng-template #singleDot>
+            } @else {
               <span class="text-gray-500">.{{ value }}</span>
-            </ng-template>
-          </ng-container>
-          <ng-template #noDots>{{ value }}</ng-template>
-        </ng-container>
+            }
+          } @else {
+            {{ value }}
+          }
+        }
       </header>
-
+    
       <!-- Sections -->
       <section appSection id="intro" title="What is Basura?" [items]="section.intro"></section>
       <section appSection id="features" title="What can it do?" [items]="section.features"></section>
@@ -40,12 +40,12 @@ interface AppSection {
         appSection
         id="inspiration"
         title="It this bot inspired by another?"
-        [items]="section.inspiration"></section>
+      [items]="section.inspiration"></section>
       <section appSection id="contact" title="Contact" [items]="section.contact"></section>
-
+    
       <footer class="mt-12 pt-4 pb-4 border-t border-solid text-gray-500 border-gray-800">&copy; {{ year }} Gavenda.</footer>
     </main>
-  `,
+    `,
   styles: [],
 })
 export class AppComponent {
