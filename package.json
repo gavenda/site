@@ -31,13 +31,13 @@
     "zone.js": "~0.16.1"
   },
   "devDependencies": {
-    "@angular/build": "^19.2.22",
-    "@angular/cli": "~19.2.22",
+    "@angular/build": "^20.3.21",
+    "@angular/cli": "~20.3.21",
     "@angular/compiler-cli": "^21.2.5",
     "@tailwindcss/postcss": "^4.2.2",
     "autoprefixer": "^10.4.27",
     "npm-run-all": "^4.1.5",
-    "postcss": "^8.4.38",
+    "postcss": "^8.5.3",
     "tailwindcss": "^4.2.2",
     "typescript": "~5.9.3",
     "wrangler": "^2.21.3"
