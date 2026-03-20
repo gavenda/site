@@ -7,12 +7,10 @@
     "serve:basura": "ng serve basura-gavenda-dev",
     "build:main": "ng build gavenda-dev",
     "build:basura": "ng build basura-gavenda-dev",
-    "scully:main": "scully --project gavenda-dev",
-    "scully:basura": "scully --project basura-gavenda-dev",
-    "generate:main": "run-s build:main",
-    "generate:basura": "run-s build:basura",
     "publish:main": "wrangler pages publish dist/gavenda-dev/browser --project-name=gavenda",
-    "publish:basura": "wrangler pages publish dist/basura-gavenda-dev/browser --project-name=basura"
+    "publish:basura": "wrangler pages publish dist/basura-gavenda-dev/browser --project-name=basura",
+    "deploy:main": "run-s build:main publish:main",
+    "deploy:basura": "run-s build:basura publish:basura"
   },
   "private": true,
   "dependencies": {
