@@ -3,16 +3,16 @@
   "version": "1.0.0",
   "scripts": {
     "start": "run-s serve:main",
-    "serve:main": "ng serve gavenda.dev",
-    "serve:basura": "ng serve basura.gavenda.dev",
-    "build:main": "ng build gavenda.dev",
-    "build:basura": "ng build basura.gavenda.dev",
-    "scully:main": "scully --project gavenda.dev",
-    "scully:basura": "scully --project basura.gavenda.dev",
+    "serve:main": "ng serve gavenda-dev",
+    "serve:basura": "ng serve basura-gavenda-dev",
+    "build:main": "ng build gavenda-dev",
+    "build:basura": "ng build basura-gavenda-dev",
+    "scully:main": "scully --project gavenda-dev",
+    "scully:basura": "scully --project basura-gavenda-dev",
     "generate:main": "run-s build:main scully:main",
     "generate:basura": "run-s build:basura scully:basura",
-    "publish:main": "wrangler pages publish dist/static/gavenda.dev --project-name=gavenda",
-    "publish:basura": "wrangler pages publish dist/static/basura.gavenda.dev --project-name=basura"
+    "publish:main": "wrangler pages publish dist/static/gavenda-dev --project-name=gavenda",
+    "publish:basura": "wrangler pages publish dist/static/basura-gavenda-dev --project-name=basura"
   },
   "private": true,
   "dependencies": {

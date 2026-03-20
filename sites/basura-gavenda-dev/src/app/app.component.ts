@@ -43,7 +43,7 @@ interface AppSection {
         [items]="section.inspiration"></section>
       <section appSection id="contact" title="Contact" [items]="section.contact"></section>
 
-      <footer class="mt-12 pt-4 pb-4 border-t border-solid text-gray-500 border-gray-800">&copy; 2023 Gavenda.</footer>
+      <footer class="mt-12 pt-4 pb-4 border-t border-solid text-gray-500 border-gray-800">&copy; {{ year }} Gavenda.</footer>
     </main>
   `,
   styles: [],
@@ -140,6 +140,6 @@ export class AppComponent {
       },
     ],
   };
-
+  year = new Date().getFullYear();
   hostname = location.hostname.split('.');
 }

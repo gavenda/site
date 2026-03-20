@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "sites",
   "projects": {
-    "basura.gavenda.dev": {
+    "basura-gavenda-dev": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -36,26 +36,26 @@
           "skipTests": true
         }
       },
-      "root": "sites/basura.gavenda.dev",
-      "sourceRoot": "sites/basura.gavenda.dev/src",
+      "root": "sites/basura-gavenda-dev",
+      "sourceRoot": "sites/basura-gavenda-dev/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser-esbuild",
           "options": {
-            "outputPath": "dist/basura.gavenda.dev",
-            "index": "sites/basura.gavenda.dev/src/index.html",
-            "main": "sites/basura.gavenda.dev/src/main.ts",
+            "outputPath": "dist/basura-gavenda-dev",
+            "index": "sites/basura-gavenda-dev/src/index.html",
+            "main": "sites/basura-gavenda-dev/src/main.ts",
             "polyfills": [
               "zone.js"
             ],
-            "tsConfig": "sites/basura.gavenda.dev/tsconfig.app.json",
+            "tsConfig": "sites/basura-gavenda-dev/tsconfig.app.json",
             "assets": [
-              "sites/basura.gavenda.dev/src/favicon.ico",
-              "sites/basura.gavenda.dev/src/assets"
+              "sites/basura-gavenda-dev/src/favicon.ico",
+              "sites/basura-gavenda-dev/src/assets"
             ],
             "styles": [
-              "sites/basura.gavenda.dev/src/styles.css"
+              "sites/basura-gavenda-dev/src/styles.css"
             ],
             "scripts": []
           },
@@ -90,10 +90,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "basura.gavenda.dev:build:production"
+              "browserTarget": "basura-gavenda-dev:build:production"
             },
             "development": {
-              "browserTarget": "basura.gavenda.dev:build:development"
+              "browserTarget": "basura-gavenda-dev:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -101,12 +101,12 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "basura.gavenda.dev:build"
+            "browserTarget": "basura-gavenda-dev:build"
           }
         }
       }
     },
-    "gavenda.dev": {
+    "gavenda-dev": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -139,26 +139,26 @@
           "skipTests": true
         }
       },
-      "root": "sites/gavenda.dev",
-      "sourceRoot": "sites/gavenda.dev/src",
+      "root": "sites/gavenda-dev",
+      "sourceRoot": "sites/gavenda-dev/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser-esbuild",
           "options": {
-            "outputPath": "dist/gavenda.dev",
-            "index": "sites/gavenda.dev/src/index.html",
-            "main": "sites/gavenda.dev/src/main.ts",
+            "outputPath": "dist/gavenda-dev",
+            "index": "sites/gavenda-dev/src/index.html",
+            "main": "sites/gavenda-dev/src/main.ts",
             "polyfills": [
               "zone.js"
             ],
-            "tsConfig": "sites/gavenda.dev/tsconfig.app.json",
+            "tsConfig": "sites/gavenda-dev/tsconfig.app.json",
             "assets": [
-              "sites/gavenda.dev/src/favicon.ico",
-              "sites/gavenda.dev/src/assets"
+              "sites/gavenda-dev/src/favicon.ico",
+              "sites/gavenda-dev/src/assets"
             ],
             "styles": [
-              "sites/gavenda.dev/src/styles.css"
+              "sites/gavenda-dev/src/styles.css"
             ],
             "scripts": []
           },
@@ -193,10 +193,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "gavenda.dev:build:production"
+              "browserTarget": "gavenda-dev:build:production"
             },
             "development": {
-              "browserTarget": "gavenda.dev:build:development"
+              "browserTarget": "gavenda-dev:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -204,10 +204,14 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "gavenda.dev:build"
+            "browserTarget": "gavenda-dev:build"
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false,
+    "packageManager": "bun"
   }
 }
