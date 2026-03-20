@@ -5,7 +5,6 @@ import { SectionComponent, SectionListItem } from './section/section.component';
 interface AppSection {
   intro: SectionListItem[];
   projects: SectionListItem[];
-  templates: SectionListItem[];
   donate: SectionListItem[];
   contact: SectionListItem[];
 }
@@ -33,7 +32,6 @@ interface AppSection {
       <!-- Sections -->
       <section appSection id="intro" [items]="section.intro"></section>
       <section appSection id="projects" title="Projects" [items]="section.projects"></section>
-      <section appSection id="templates" title="Templates" [items]="section.templates"></section>
       <section appSection id="donate" title="Donate" [items]="section.donate"></section>
       <section appSection id="contact" title="Contact" [items]="section.contact"></section>
 
@@ -60,13 +58,6 @@ export class AppComponent {
         type: 'link',
         url: 'https://github.com/gavenda/studio-helper/tree/main/bot/vivy',
         text: 'Vivy (Modern Music Bot)',
-      },
-    ],
-    templates: [
-      {
-        type: 'link',
-        url: 'https://github.com/gavenda/discord-bot-kotlin',
-        text: 'discord-bot-kotlin',
       },
     ],
     donate: [
