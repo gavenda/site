@@ -24,7 +24,7 @@ interface AppSection {
               <span class="text-gray-500">.{{ value }}</span>
             }
           } @else {
-            {{ value }}
+            <span>{{ value }}</span>
           }
         }
       </header>
