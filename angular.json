@@ -41,11 +41,12 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser-esbuild",
+          "builder": "@angular/build:application",
           "options": {
-            "outputPath": "dist/basura-gavenda-dev",
+            "outputPath": {
+              "base": "dist/basura-gavenda-dev"
+            },
             "index": "sites/basura-gavenda-dev/src/index.html",
-            "main": "sites/basura-gavenda-dev/src/main.ts",
             "polyfills": [
               "zone.js"
             ],
@@ -57,7 +58,8 @@
             "styles": [
               "sites/basura-gavenda-dev/src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "browser": "sites/basura-gavenda-dev/src/main.ts"
           },
           "configurations": {
             "production": {
@@ -76,9 +78,7 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
@@ -87,7 +87,7 @@
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
               "buildTarget": "basura-gavenda-dev:build:production"
@@ -99,7 +99,7 @@
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "builder": "@angular/build:extract-i18n",
           "options": {
             "buildTarget": "basura-gavenda-dev:build"
           }
@@ -144,11 +144,12 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser-esbuild",
+          "builder": "@angular/build:application",
           "options": {
-            "outputPath": "dist/gavenda-dev",
+            "outputPath": {
+              "base": "dist/gavenda-dev"
+            },
             "index": "sites/gavenda-dev/src/index.html",
-            "main": "sites/gavenda-dev/src/main.ts",
             "polyfills": [
               "zone.js"
             ],
@@ -160,7 +161,8 @@
             "styles": [
               "sites/gavenda-dev/src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "browser": "sites/gavenda-dev/src/main.ts"
           },
           "configurations": {
             "production": {
@@ -179,9 +181,7 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
@@ -190,7 +190,7 @@
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
               "buildTarget": "gavenda-dev:build:production"
@@ -202,7 +202,7 @@
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "builder": "@angular/build:extract-i18n",
           "options": {
             "buildTarget": "gavenda-dev:build"
           }
