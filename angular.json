@@ -90,10 +90,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "basura-gavenda-dev:build:production"
+              "buildTarget": "basura-gavenda-dev:build:production"
             },
             "development": {
-              "browserTarget": "basura-gavenda-dev:build:development"
+              "buildTarget": "basura-gavenda-dev:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -101,7 +101,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "basura-gavenda-dev:build"
+            "buildTarget": "basura-gavenda-dev:build"
           }
         }
       }
@@ -193,10 +193,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "gavenda-dev:build:production"
+              "buildTarget": "gavenda-dev:build:production"
             },
             "development": {
-              "browserTarget": "gavenda-dev:build:development"
+              "buildTarget": "gavenda-dev:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -204,7 +204,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "gavenda-dev:build"
+            "buildTarget": "gavenda-dev:build"
           }
         }
       }
